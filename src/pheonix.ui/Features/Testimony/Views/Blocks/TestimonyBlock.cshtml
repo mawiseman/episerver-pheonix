@@ -1,0 +1,24 @@
+﻿@using EPiServer.Web.Mvc.Html
+@using EPiServer.Web.Routing
+
+@model Features.Testimony.Models.Blocks.TestimonyBlock
+
+@{ 
+    // this should probably be converted to a controller so we aren't calling UrlResolver here
+
+    var imageUrl = UrlResolver.Current.GetUrl(Model.Photo);
+}
+<div class="item">
+    <div class="testimony-wrap text-center">
+        <div class="user-img mb-4" style="background-image: url(@imageUrl)">
+            <span class="quote d-flex align-items-center justify-content-center">
+                <i class="icon-quote-left"></i>
+            </span>
+        </div>
+        <div class="text p-3">
+            <p class="mb-4">@Html.PropertyFor(m => m.Testimony)</p>
+            <p class="name">@Html.PropertyFor(m => m.Name)</p>
+            <span class="position">@Html.PropertyFor(m => m.Position)</span>
+        </div>
+    </div>
+</div>

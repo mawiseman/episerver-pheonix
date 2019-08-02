@@ -1,0 +1,14 @@
+C:\projects\avanade.episerver\src\01. Project\pheonix.ui\code\bin\pheonix.ui.dll.config
+C:\projects\avanade.episerver\src\01. Project\pheonix.ui\code\bin\pheonix.ui.dll
+C:\projects\avanade.episerver\src\01. Project\pheonix.ui\code\bin\pheonix.ui.pdb
+C:\projects\avanade.episerver\src\01. Project\pheonix.ui\code\bin\System.Threading.Tasks.Dataflow.dll
+C:\projects\avanade.episerver\src\01. Project\pheonix.ui\code\obj\Debug\pheonix.ui.csproj.CoreCompileInputs.cache
+C:\projects\avanade.episerver\src\01. Project\pheonix.ui\code\obj\Debug\pheonix.ui.csproj.CopyComplete
+C:\projects\avanade.episerver\src\01. Project\pheonix.ui\code\obj\Debug\pheonix.ui.dll
+C:\projects\avanade.episerver\src\01. Project\pheonix.ui\code\obj\Debug\pheonix.ui.pdb
+C:\projects\avanade.episerver\src\01. Project\pheonix.ui\code\obj\Debug\pheonix.ui.csprojAssemblyReference.cache
+C:\projects\avanade.episerver\src\01. Project\pheonix.ui\code\bin\EPiServer.Cms.Shell.UI.dll
+C:\projects\avanade.episerver\src\01. Project\pheonix.ui\code\bin\EPiServer.ServiceLocation.StructureMap.dll
+C:\projects\avanade.episerver\src\01. Project\pheonix.ui\code\bin\EPiServer.Shell.dll
+C:\projects\avanade.episerver\src\01. Project\pheonix.ui\code\bin\EPiServer.Shell.UI.dll
+C:\projects\avanade.episerver\src\01. Project\pheonix.ui\code\bin\EPiServer.UI.dll

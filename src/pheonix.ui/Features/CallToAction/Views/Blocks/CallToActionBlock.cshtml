@@ -1,0 +1,25 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model Features.CallToAction.Models.Blocks.CallToActionBlock
+
+<section class="ftco-section img ftco-about ftco-no-pt ftco-no-pb" style="background-image: url(@Url.ContentUrl(Model.BackgroundImage));" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-md-5 py-md-5">
+                <div class="row justify-content-start py-md-5">
+                    <div class="col-md-12 heading-section heading-section-white ftco-animate">
+                        <h2 class="mb-4">@Html.PropertyFor(m => m.Title)</h2>
+                        <p>@Html.PropertyFor(m => m.Blurb)</p>
+                        <p><a class="btn btn-secondary py-3 px-4" title="@Model.ButtonText" href="@Url.PageLinkUrl(Model.ButtonLink)" @Html.EditAttributes(m => m.ButtonText)>@Model.ButtonText</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6 d-flex">
+                <div class="img d-flex align-self-stretch" style="background-image:url(@Url.ContentUrl(Model.ForegroundImage));"></div>
+            </div>
+        </div>
+    </div>
+</section>

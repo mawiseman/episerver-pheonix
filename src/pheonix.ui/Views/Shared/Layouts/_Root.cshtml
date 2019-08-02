@@ -1,0 +1,25 @@
+﻿@model EPiServer.Core.PageData
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    @Html.Partial("_ThemeStyles", Model)
+
+    @* I'm not sure i like this...
+        maybey just call ~/Views/Shared/Blocks/MetaDataBlock.cshtml directly and do both actions at once *@
+    @Html.Partial("~/Features/MetaData/Views/Blocks/_MetaData.cshtml", Model)
+    @Html.Partial("~/Features/PageScripts/Views/Blocks/_GlobalPageHeadScript.cshtml", Model)
+    @Html.Partial("~/Features/PageScripts/Views/Blocks/_PageHeadScript.cshtml", Model)
+</head>
+<body>
+    @Html.Partial("~/Features/PageScripts/Views/Blocks/_GlobalPageBodyStartScript.cshtml", Model)
+    @Html.Partial("~/Features/PageScripts/Views/Blocks/_PageBodyStartScript.cshtml", Model)
+    @RenderBody()
+
+    @Html.Partial("_ThemeScripts", Model)
+    @Html.Partial("~/Features/PageScripts/Views/Blocks/_GlobalPageBodyEndScript.cshtml", Model)
+    @Html.Partial("~/Features/PageScripts/Views/Blocks/_PageBodyEndScript.cshtml", Model)
+</body>
+</html>

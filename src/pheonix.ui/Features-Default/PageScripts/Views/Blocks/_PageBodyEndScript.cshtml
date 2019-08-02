@@ -1,0 +1,14 @@
+﻿@using Features.PageScripts.Models.Pages
+@model EPiServer.Core.PageData
+@{
+    if (!(Model is IHasPageScripts) || EPiServer.Editor.PageEditing.PageIsInEditMode)
+    {
+        return;
+    }
+
+    var pageScripts = ((IHasPageScripts)Model).PageScripts;
+}
+@if (!string.IsNullOrEmpty(pageScripts.PageBodyEndScript))
+{
+    @Html.Raw(pageScripts.PageBodyEndScript)
+}
