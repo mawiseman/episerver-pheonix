@@ -1,12 +1,11 @@
-﻿using EPiServer.Cms.Shell;
-using EPiServer.Framework;
+﻿using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
-using EPiServer.Shell;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Features.ContentIcons;
 using Features.ContentIcons.Business.DataAnnotations;
+using EPiServer.Shell;
+using EPiServer.Cms.Shell;
 
 namespace Features.ContentIcons.Business.Initialization
 {

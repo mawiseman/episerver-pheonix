@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\projects\\avanade.episerver\\src\\pheonix.ui\\pheonix.ui.csproj",
+  "FilePath": "c:\\projects\\episerver-pheonix\\src\\pheonix.ui\\pheonix.ui.csproj",
   "Configuration": {
     "ConfigurationName": "UnsupportedRazor",
     "LanguageVersion": "1.0",
@@ -11,8 +11,9 @@
   },
   "ProjectWorkspaceState": {
     "TagHelpers": [],
-    "CSharpLanguageVersion": 703
+    "CSharpLanguageVersion": 800
   },
   "RootNamespace": null,
-  "Documents": []
+  "Documents": [],
+  "SerializationFormat": "0.2"
 }

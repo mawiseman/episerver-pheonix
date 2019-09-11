@@ -1,24 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using EPiServer;
+﻿using EPiServer;
 using EPiServer.Core;
-using EPiServer.ServiceLocation;
-using EPiServer.Web;
 using EPiServer.Web.Mvc;
 using Features.Testimony.Models.Blocks;
 using Features.Testimony.Models.ViewModels;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace Features.Testimony.Controllers
 {
     public class TestimonyCarouselBlockController : BlockController<TestimonyCarouselBlock>
     {
+        private readonly IContentLoader contentLoader;
+
+        public TestimonyCarouselBlockController(IContentLoader contentLoader)
+        {
+            this.contentLoader = contentLoader;
+        }
+
         public override ActionResult Index(TestimonyCarouselBlock currentBlock)
         {
-            var contentLoader = ServiceLocator.Current.GetInstance<IContentLoader>();
-
             var viewModel = new TestimonyCarouselBlockViewModel
             {
                 Heading = currentBlock.Heading,
