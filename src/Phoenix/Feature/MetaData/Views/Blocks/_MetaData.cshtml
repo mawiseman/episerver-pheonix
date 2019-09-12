@@ -1,0 +1,28 @@
+﻿@using Feature.MetaData.Models.Pages
+@model EPiServer.Core.PageData
+
+@{
+    if (!(Model is IHasMetaData))
+    {
+        return;
+    }
+
+    var mataData = ((IHasMetaData)Model).MetaData;
+}
+
+@if (!string.IsNullOrEmpty(mataData.MetaTitle))
+{
+    <title>@mataData.MetaTitle</title>
+}
+@if (!string.IsNullOrEmpty(mataData.MetaKeywords))
+{
+    <meta name="keywords" content="@mataData.MetaKeywords" />
+}
+@if (!string.IsNullOrEmpty(mataData.MetaDescription))
+{
+    <meta name="description" content="@mataData.MetaDescription" />
+}
+@if (mataData.MetaRobots.Any())
+{
+    <meta name="robots" content="@string.Join(",", mataData.MetaRobots)" />
+}

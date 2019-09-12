@@ -1,0 +1,27 @@
+﻿@using Pheonix.Models.Pages
+@using Pheonix.Models.ViewModels
+@model ISitePageViewModel<SitePageData>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    @Html.Partial("_ThemeStyles", Model)
+
+    @Html.Partial(Feature.MetaData.Constants.ViewPaths.MetaData, Model.CurrentPage)
+    @Html.Partial(Feature.PageScripts.Constants.ViewPaths.GlobalPageHeadScripts, Model.CurrentPage)
+    @Html.Partial(Feature.PageScripts.Constants.ViewPaths.PageHeadScripts, Model.CurrentPage)
+</head>
+<body>
+    @Html.Partial(Feature.PageScripts.Constants.ViewPaths.GlobalPageBodyStartScripts, Model.CurrentPage)
+    @Html.Partial(Feature.PageScripts.Constants.ViewPaths.PageBodyStartScripts, Model.CurrentPage)
+
+    @RenderBody()
+
+    @Html.Partial("_ThemeScripts", Model)
+
+    @Html.Partial(Feature.PageScripts.Constants.ViewPaths.GlobalPageBodyEndScripts, Model.CurrentPage)
+    @Html.Partial(Feature.PageScripts.Constants.ViewPaths.PageBodyStartScripts, Model.CurrentPage)
+</body>
+</html>
