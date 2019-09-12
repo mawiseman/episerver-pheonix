@@ -1,15 +1,15 @@
-﻿using Pheonix.Models.Pages;
+﻿using Phoenix.Models.Pages;
 using EPiServer.Web.Mvc;
 using System.Web.Mvc;
-using Pheonix.Models.ViewModels;
+using Phoenix.Models.ViewModels;
 
-namespace Pheonix.Controllers
+namespace Phoenix.Controllers
 {
     public class StartPageController : PageController<StartPage>
     {
         public ActionResult Index(StartPage currentPage)
         {
-            var model = new SitePageViewModel<StartPage>(currentPage);
+            var model = new PageViewModel<StartPage>(currentPage);
             return View(model);
         }
     }

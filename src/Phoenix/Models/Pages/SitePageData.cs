@@ -10,9 +10,9 @@ using Feature.PageScripts.Models.Blocks;
 using Feature.PageScripts.Models.Pages;
 using Feature.RichText.Models.Blocks;
 using Feature.Testimony.Models.Blocks;
-using Pheonix.Business.Site;
+using Phoenix.Business.Site;
 
-namespace Pheonix.Models.Pages
+namespace Phoenix.Models.Pages
 {
     public abstract class SitePageData : PageData, IHasMetaData, IHasPageScripts
     {

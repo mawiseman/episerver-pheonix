@@ -2,7 +2,7 @@
 using EPiServer.DataAnnotations;
 using Foundation.ImageUrlGenerator.Business.DataAnnotations;
 
-namespace Pheonix.Models.Pages
+namespace Phoenix.Models.Pages
 {
     [ContentType(DisplayName = "Standard Page", 
         GUID = "3fae62cd-3d17-4e54-9017-ff37fe4c0819", 

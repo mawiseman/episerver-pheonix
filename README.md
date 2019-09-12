@@ -2,7 +2,9 @@
 - 404
 - 500
 - Robots
-- Dictionary
+- Dictionary (or do we just use language files)
+- Block Preview
+- Default Devices
 
 ## Useful links
 - Fontawesome thumbnails: https://github.com/Geta/Epi.FontThumbnail

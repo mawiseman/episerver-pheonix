@@ -1,6 +1,5 @@
 ﻿@using Feature.MetaData.Models.Pages
 @model EPiServer.Core.PageData
-
 @{
     if (!(Model is IHasMetaData))
     {
@@ -9,7 +8,6 @@
 
     var mataData = ((IHasMetaData)Model).MetaData;
 }
-
 @if (!string.IsNullOrEmpty(mataData.MetaTitle))
 {
     <title>@mataData.MetaTitle</title>
