@@ -1,0 +1,22 @@
+﻿@using Foundation.BlockPreview.Models.ViewModels
+@model BlockPreviewModel
+
+@foreach (var area in Model.Areas)
+{
+    if (area.Supported)
+    {
+        <p>@string.Format("The block '{0}' when displayed as {1}", Model.PreviewContent.Name, @Html.Translate(area.AreaName))</p>
+        <div class="row preview clearfix">
+            @Html.DisplayFor(x => area.ContentArea, new { Tag = area.AreaTag })
+        </div>
+    }
+    else
+    {
+        <p>@string.Format("The block '{0}' cannot be displayed as {1}", Model.PreviewContent.Name, @Html.Translate(area.AreaName))</p>
+    }
+}
+
+@if (!Model.Areas.Any())
+{
+    <p>@string.Format("No renderer found for '{0}'", Model.PreviewContent.Name)</p>
+}

@@ -219,6 +219,7 @@
     <Compile Include="Business\Site\SiteTabNames.cs" />
     <Compile Include="Controllers\StandardPageController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
+    <Compile Include="Foundation\BlockPreview\Controllers\BlockPreviewController.cs" />
     <Compile Include="Feature\CallToAction\Models\Blocks\CallToActionBlock.cs" />
     <Compile Include="Feature\CallToAction\RegisterBlockViews.cs" />
     <Compile Include="Feature\Media\Models\ImageFile.cs" />
@@ -236,6 +237,7 @@
     <Compile Include="Feature\Testimony\Models\Blocks\TestimonyCarouselBlock.cs" />
     <Compile Include="Feature\Testimony\Models\ViewModels\TestimonyCarouselBlockViewModel.cs" />
     <Compile Include="Feature\Testimony\RegisterBlockViews.cs" />
+    <Compile Include="Foundation\BlockPreview\Models\ViewModels\BlockPreviewModel.cs" />
     <Compile Include="Foundation\ContentIcons\Business\DataAnnotations\ContentIconAttribute.cs" />
     <Compile Include="Foundation\ContentIcons\Business\Initialization\ContentIconInitializer.cs" />
     <Compile Include="Foundation\ContentIcons\ContentIcon.cs" />
@@ -262,6 +264,7 @@
     <Folder Include="Models\Media\" />
     <Folder Include="Models\Properties\" />
     <Folder Include="Static\" />
+    <Folder Include="Views\BlockPreview\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\about.html" />
@@ -354,6 +357,7 @@
     <Content Include="assets\js\owl.carousel.min.js" />
     <Content Include="assets\js\popper.min.js" />
     <Content Include="assets\js\scrollax.min.js" />
+    <None Include="Foundation\BlockPreview\ReadMe.md" />
     <Content Include="Views\Web.config" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -503,6 +507,9 @@
     <Content Include="modules\_protected\CMS\CMS.zip" />
     <Content Include="modules\_protected\EPiServer.Cms.TinyMce\web.config" />
     <Content Include="modules\_protected\EPiServer.Cms.TinyMce\EPiServer.Cms.TinyMce.zip" />
+    <Content Include="Foundation\BlockPreview\Views\BlockPreview\Index.cshtml" />
+    <Content Include="Foundation\BlockPreview\Views\Web.config" />
+    <Content Include="Foundation\BlockPreview\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\StandardPage\Index.cshtml" />
     <Content Include="Views\StartPage\Index.cshtml" />

@@ -1,9 +1,5 @@
 ﻿using EPiServer.Web.Mvc;
 using Feature.CallToAction.Models.Blocks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Feature.CallToAction
 {

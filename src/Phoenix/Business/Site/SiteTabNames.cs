@@ -1,12 +1,11 @@
 ﻿using EPiServer.DataAnnotations;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace Phoenix.Business.Site
 {
+    /// <summary>
+    /// I think this could be a foundational class for use that new projects just inherit
+    /// </summary>
     [GroupDefinitions]
     public static class SiteTabNames
     {
