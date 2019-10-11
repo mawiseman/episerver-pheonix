@@ -8,7 +8,7 @@ This project is intended to provide additional field editors that are not includ
 
 - [Avaliable Editors](#Editors)
   - [Date Only](#DateOnly)
-- [Editor Demos](#EditorDemos)
+- [Editor Tests](#Tests)
 
 ## <a id="Editors"></a>Avaliable Editors
 
@@ -24,11 +24,10 @@ Provides a date selector without time
 public virtual System.DateTime DateOnly { get; set; }
 ```
 
-## <a id="EditorDemos"></a>Editor Demos
+## <a id="Tests"></a>Editor Tests
 
-To see all the avaliable editors add the `EditorsTestPage` to `AvailableContentTypes`
-
-```
-[AvailableContentTypes(Include = new[] { typeof(EditorsTestPage)})]
-public class YourStartPage : PageData { /* ... */ }
-```
+1. Log into the CMS
+2. Navigate to `Admin` > `Content Type`
+3. Select the `Page Type` you would like to create the test page under
+4. Select the `Avaliable Page Types` tab
+5. Enable `Editors Test Page`

@@ -11,8 +11,7 @@ namespace Foundation.Editors.Models.Pages
     /// This page can be use to test all the avaliable editors in this feature.
     /// </summary>
     [ContentType(DisplayName = "Editors Test Page",
-        GUID = "38221CDC-8719-418F-845A-E59B2CCDCB48",
-        Description = "")]
+        GUID = "38221CDC-8719-418F-845A-E59B2CCDCB48")]
     public class EditorsTestPage : PageData
     {
         #region Dates

@@ -222,7 +222,8 @@
     <Compile Include="Foundation\BlockPreview\Controllers\BlockPreviewController.cs" />
     <Compile Include="Feature\CallToAction\Models\Blocks\CallToActionBlock.cs" />
     <Compile Include="Feature\CallToAction\RegisterBlockViews.cs" />
-    <Compile Include="Feature\Media\Models\ImageFile.cs" />
+    <Compile Include="Foundation\Media\Models\VideoFile.cs" />
+    <Compile Include="Foundation\Media\Models\ImageFile.cs" />
     <Compile Include="Feature\MetaData\Constants.cs" />
     <Compile Include="Feature\MetaData\Models\Blocks\MetaDataBlock.cs" />
     <Compile Include="Feature\MetaData\Models\Pages\IHasMetaData.cs" />
@@ -251,6 +252,7 @@
     <Compile Include="Foundation\ImageUrlGenerator\Business\Initialization\ImageUrlGeneratorInitializer.cs" />
     <Compile Include="Foundation\ImageUrlGenerator\Constants.cs" />
     <Compile Include="Foundation\ImageUrlGenerator\Controllers\ImageUrlGeneratorController.cs" />
+    <Compile Include="Foundation\Media\Pages\MediaTestPage.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -360,6 +362,7 @@
     <Content Include="assets\js\owl.carousel.min.js" />
     <Content Include="assets\js\popper.min.js" />
     <Content Include="assets\js\scrollax.min.js" />
+    <Content Include="Foundation\Media\ReadMe.md" />
     <None Include="Foundation\BlockPreview\ReadMe.md" />
     <Content Include="Views\Web.config" />
     <Content Include="Global.asax" />

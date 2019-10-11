@@ -15,7 +15,7 @@ At each of the levels the following script locations are avaliable
 
 ## Usage
 
-#### 1. Implement IHasGlobalPageScripts
+#### 1. Implement `IHasGlobalPageScripts`
 
 On the page that authors should edit Global page scripts, implement `IHasGlobalPageScripts`. 
 
@@ -32,7 +32,7 @@ public class StartPage : BasePage, IHasGlobalPageScripts
 }
 ```
 
-#### 2. Implement IHasPageScripts
+#### 2. Implement `IHasPageScripts`
 
 On the pages that authors can edit page scripts, implement `IHasPageScripts`
 
