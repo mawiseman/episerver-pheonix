@@ -7,13 +7,14 @@ using Feature.PageScripts.Models.Blocks;
 using Feature.PageScripts.Models.Pages;
 using Phoenix.Business.Site;
 using System.ComponentModel.DataAnnotations;
+using Foundation.Editors.Models.Pages;
 
 namespace Phoenix.Models.Pages
 {
     [ContentType(DisplayName = "Start Page",
         GUID = "506d9dd1-a88d-48ba-9b16-e07104c98a4a",
         Description = "")]
-    [AvailableContentTypes(Include = new[] { typeof(StandardPage) })]
+    [AvailableContentTypes(Include = new[] { typeof(StandardPage), typeof(EditorsTestPage) })]
     [ContentIcon(ContentIcon.ObjectStart)]
     [ImageUrlGenerator("Start Page")]
     public class StartPage : SitePageData, IHasGlobalPageScripts

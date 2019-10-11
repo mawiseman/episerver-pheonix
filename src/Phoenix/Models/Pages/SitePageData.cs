@@ -14,6 +14,7 @@ using Phoenix.Business.Site;
 
 namespace Phoenix.Models.Pages
 {
+    // TODO: this could probably be in foundation / feature / xxx because it _should_ be the same for every project
     public abstract class SitePageData : PageData, IHasMetaData, IHasPageScripts
     {
         [Display(Name = "Meta Data", GroupName = SiteTabNames.SEO)]

@@ -244,6 +244,9 @@
     <Compile Include="Foundation\ContentIcons\ContentIconColor.cs" />
     <Compile Include="Foundation\DependencyResolution\Business\Initialization\RegisterDependencyResolverInitializationModule.cs" />
     <Compile Include="Foundation\DependencyResolution\Business\StructureMapDependencyResolver.cs" />
+    <Compile Include="Foundation\Editors\Business\EditorDescriptors\DateOnlyEditorDescriptor.cs" />
+    <Compile Include="Foundation\Editors\Constants.cs" />
+    <Compile Include="Foundation\Editors\Models\Pages\EditorsTestPage.cs" />
     <Compile Include="Foundation\ImageUrlGenerator\Business\DataAnnotations\ImageUrlGeneratorAttribute.cs" />
     <Compile Include="Foundation\ImageUrlGenerator\Business\Initialization\ImageUrlGeneratorInitializer.cs" />
     <Compile Include="Foundation\ImageUrlGenerator\Constants.cs" />
@@ -510,6 +513,7 @@
     <Content Include="Foundation\BlockPreview\Views\BlockPreview\Index.cshtml" />
     <Content Include="Foundation\BlockPreview\Views\Web.config" />
     <Content Include="Foundation\BlockPreview\Views\_ViewStart.cshtml" />
+    <Content Include="Foundation\Editors\ReadMe.md" />
     <None Include="packages.config" />
     <Content Include="Views\StandardPage\Index.cshtml" />
     <Content Include="Views\StartPage\Index.cshtml" />
