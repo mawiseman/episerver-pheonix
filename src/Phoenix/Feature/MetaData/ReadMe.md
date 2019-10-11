@@ -10,6 +10,8 @@ Provides the ability for content authors add meta data to their websites
 
 On the page that authors should edit Global page scripts, implement `IHasMetaData`
 
+i.e. Your sites `BasePage` that all pages inherit from
+
 ```
 public abstract class BasePage : PageData, IHasMetaData
 {
@@ -29,7 +31,7 @@ On you shared layout add Partial Renderings to display the Meta Data
 <!DOCTYPE html>
 <html>
 <head>
-    @Html.Partial("~/Feature/MetaData/Views/Blocks/_MetaData.cshtml", Model)
+    @Html.Partial(Feature.MetaData.Constants.ViewPaths.MetaData, Model.CurrentPage)
 </head>
 <body>
     @RenderBody()

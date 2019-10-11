@@ -17,7 +17,9 @@ At each of the levels the following script locations are avaliable
 
 #### 1. Implement IHasGlobalPageScripts
 
-On the page that authors should edit Global page scripts, implement `IHasGlobalPageScripts`
+On the page that authors should edit Global page scripts, implement `IHasGlobalPageScripts`. 
+
+i.e. Your sites `StartPage`
 
 ```
 public class StartPage : BasePage, IHasGlobalPageScripts
@@ -33,6 +35,8 @@ public class StartPage : BasePage, IHasGlobalPageScripts
 #### 2. Implement IHasPageScripts
 
 On the pages that authors can edit page scripts, implement `IHasPageScripts`
+
+i.e. Your sites `BasePage` that all pages inherit from
 
 ```
 public class BasePage : IHasPageScripts
@@ -53,17 +57,17 @@ On you shared layout add Partial Renderings for both Global Page Scripts and Pag
 <!DOCTYPE html>
 <html>
 <head>
-    @Html.Partial("~/Feature/PageScripts/Views/Blocks/_GlobalPageHeadScript.cshtml", Model)
-    @Html.Partial("~/Feature/PageScripts/Views/Blocks/_PageHeadScript.cshtml", Model)
+	@Html.Partial(Feature.PageScripts.Constants.ViewPaths.GlobalPageHeadScripts, Model.CurrentPage)
+	@Html.Partial(Feature.PageScripts.Constants.ViewPaths.PageHeadScripts, Model.CurrentPage)
 </head>
 <body>
-    @Html.Partial("~/Feature/PageScripts/Views/Blocks/_GlobalPageBodyStartScript.cshtml", Model)
-    @Html.Partial("~/Feature/PageScripts/Views/Blocks/_PageBodyStartScript.cshtml", Model)
+	@Html.Partial(Feature.PageScripts.Constants.ViewPaths.GlobalPageBodyStartScripts, Model.CurrentPage)
+	@Html.Partial(Feature.PageScripts.Constants.ViewPaths.PageBodyStartScripts, Model.CurrentPage)
     
 	@RenderBody()
 
-    @Html.Partial("~/Feature/PageScripts/Views/Blocks/_GlobalPageBodyEndScript.cshtml", Model)
-    @Html.Partial("~/Feature/PageScripts/Views/Blocks/_PageBodyEndScript.cshtml", Model)
+	@Html.Partial(Feature.PageScripts.Constants.ViewPaths.GlobalPageBodyEndScripts, Model.CurrentPage)
+	@Html.Partial(Feature.PageScripts.Constants.ViewPaths.PageBodyStartScripts, Model.CurrentPage)
 </body>
 </html>
 ```
