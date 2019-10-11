@@ -514,6 +514,7 @@
     <Content Include="Foundation\BlockPreview\Views\Web.config" />
     <Content Include="Foundation\BlockPreview\Views\_ViewStart.cshtml" />
     <Content Include="Foundation\Editors\ReadMe.md" />
+    <Content Include="Foundation\ReadMe.md" />
     <None Include="packages.config" />
     <Content Include="Views\StandardPage\Index.cshtml" />
     <Content Include="Views\StartPage\Index.cshtml" />

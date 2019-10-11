@@ -1,3 +1,7 @@
+## Introduction
+
+This is a project that i ahve been putting together whilst going through the EPI Server developers training and is a proving ground for what i am learning as well as some structures / processes which future projects might use
+
 ## Todo
 - 404
 - 500
