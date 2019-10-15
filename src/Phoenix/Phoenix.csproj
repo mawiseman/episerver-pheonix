@@ -222,6 +222,8 @@
     <Compile Include="Foundation\BlockPreview\Controllers\BlockPreviewController.cs" />
     <Compile Include="Feature\CallToAction\Models\Blocks\CallToActionBlock.cs" />
     <Compile Include="Feature\CallToAction\RegisterBlockViews.cs" />
+    <Compile Include="Foundation\Editors\Business\EditorDescriptors\DateTimeEditorDescriptor.cs" />
+    <Compile Include="Foundation\Editors\Business\Helpers\DateFormat.cs" />
     <Compile Include="Foundation\Media\Models\VideoFile.cs" />
     <Compile Include="Foundation\Media\Models\ImageFile.cs" />
     <Compile Include="Feature\MetaData\Constants.cs" />

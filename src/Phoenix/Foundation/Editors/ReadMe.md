@@ -7,15 +7,26 @@ This project is intended to provide additional field editors that are not includ
 ## Contents
 
 - [Avaliable Editors](#Editors)
+  - [Date Time](#DateTime)
   - [Date Only](#DateOnly)
 - [Editor Tests](#Tests)
 
 ## <a id="Editors"></a>Avaliable Editors
 
+### <a id="DateTime"></a>Date Time
+
+- Enhanced Date Time to support en-AU date formats: dd-MM-yyyy
+
+#### Usage
+
+```
+public virtual System.DateTime DateOnly { get; set; }
+```
+
 ### <a id="DateOnly"></a>Date Only
 
-
-Provides a date selector without time
+- Provides a date selector without time
+- Supports en-AU date formats: dd-MM-yyyy
 
 #### Usage
 
