@@ -219,6 +219,10 @@
     <Compile Include="Business\Site\SiteTabNames.cs" />
     <Compile Include="Controllers\StandardPageController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
+    <Compile Include="Feature\Robots\Business\RobotsInitializationModule.cs" />
+    <Compile Include="Feature\Robots\Controllers\RobotsController.cs" />
+    <Compile Include="Feature\Robots\Models\Blocks\RobotsBlock.cs" />
+    <Compile Include="Feature\Robots\Models\Pages\IHasRobots.cs" />
     <Compile Include="Foundation\BlockPreview\Controllers\BlockPreviewController.cs" />
     <Compile Include="Feature\CallToAction\Models\Blocks\CallToActionBlock.cs" />
     <Compile Include="Feature\CallToAction\RegisterBlockViews.cs" />
@@ -365,6 +369,7 @@
     <Content Include="assets\js\popper.min.js" />
     <Content Include="assets\js\scrollax.min.js" />
     <Content Include="Foundation\Media\ReadMe.md" />
+    <Content Include="Feature\Robots\ReadMe.md" />
     <None Include="Foundation\BlockPreview\ReadMe.md" />
     <Content Include="Views\Web.config" />
     <Content Include="Global.asax" />

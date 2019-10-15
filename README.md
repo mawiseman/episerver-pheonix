@@ -20,7 +20,6 @@ Currently using a semi Sitecore Helix approach.
 ## Todo
 - 404
 - 500
-- Robots
 - Dictionary (or do we just use language files)
 - Default Devices
 

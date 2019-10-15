@@ -8,7 +8,7 @@ Provides the ability for content authors add meta data to their websites
 
 #### Implement `IHasMetaData`
 
-On the page that authors should edit Global page scripts, implement `IHasMetaData`
+On the pages that authors can edit Meta Data, implement `IHasMetaData`
 
 i.e. Your sites `BasePage` that all pages inherit from
 

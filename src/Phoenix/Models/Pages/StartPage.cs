@@ -7,7 +7,8 @@ using Feature.PageScripts.Models.Blocks;
 using Feature.PageScripts.Models.Pages;
 using Phoenix.Business.Site;
 using System.ComponentModel.DataAnnotations;
-using Foundation.Editors.Models.Pages;
+using Feature.Robots.Models.Blocks;
+using Feature.Robots.Models.Pages;
 
 namespace Phoenix.Models.Pages
 {
@@ -17,12 +18,18 @@ namespace Phoenix.Models.Pages
     [AvailableContentTypes(Include = new[] { typeof(StandardPage) })]
     [ContentIcon(ContentIcon.ObjectStart)]
     [ImageUrlGenerator("Start Page")]
-    public class StartPage : SitePageData, IHasGlobalPageScripts
+    public class StartPage : SitePageData, IHasGlobalPageScripts, IHasRobots
     {
         [Display(Name = "Global Page Scripts", 
             GroupName = SiteTabNames.SiteSettings, 
             Order = 600, 
             Description = "These scripts will be rendered on every page in the site")]
         virtual public PageScriptsBlock GlobalPageScripts { get; set; }
+
+        [Display(Name = "Robots.txt",
+            GroupName = SiteTabNames.SiteSettings,
+            Order = 700,
+            Description = "Content for robots.txt")]
+        virtual public RobotsBlock Robots { get; set; }
     }
 }

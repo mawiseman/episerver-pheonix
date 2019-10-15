@@ -10,11 +10,11 @@ namespace Feature.Testimony.Controllers
 {
     public class TestimonyCarouselBlockController : BlockController<TestimonyCarouselBlock>
     {
-        private readonly IContentLoader contentLoader;
+        private readonly IContentLoader _contentLoader;
 
         public TestimonyCarouselBlockController(IContentLoader contentLoader)
         {
-            this.contentLoader = contentLoader;
+            _contentLoader = contentLoader;
         }
 
         public override ActionResult Index(TestimonyCarouselBlock currentBlock)
@@ -23,7 +23,7 @@ namespace Feature.Testimony.Controllers
             {
                 Heading = currentBlock.Heading,
                 SubHeading = currentBlock.SubHeading,
-                Testimonies = contentLoader.GetItems(currentBlock.Testimonies, new LoaderOptions() { LanguageLoaderOption.FallbackWithMaster() }).Cast<TestimonyBlock>().ToList()
+                Testimonies = _contentLoader.GetItems(currentBlock.Testimonies, new LoaderOptions() { LanguageLoaderOption.FallbackWithMaster() }).Cast<TestimonyBlock>().ToList()
             };
 
             return PartialView("~/Feature/Testimony/Views/TestimonyCarouselBlock/Index.cshtml", viewModel);
