@@ -255,7 +255,7 @@
     <Compile Include="Foundation\Editors\Constants.cs" />
     <Compile Include="Foundation\Editors\Models\Pages\EditorsTestPage.cs" />
     <Compile Include="Foundation\ImageUrlGenerator\Business\DataAnnotations\ImageUrlGeneratorAttribute.cs" />
-    <Compile Include="Foundation\ImageUrlGenerator\Business\Initialization\ImageUrlGeneratorInitializer.cs" />
+    <Compile Include="Foundation\ImageUrlGenerator\Business\ImageUrlGeneratorInitializer.cs" />
     <Compile Include="Foundation\ImageUrlGenerator\Constants.cs" />
     <Compile Include="Foundation\ImageUrlGenerator\Controllers\ImageUrlGeneratorController.cs" />
     <Compile Include="Foundation\Media\Pages\MediaTestPage.cs" />
@@ -368,6 +368,8 @@
     <Content Include="assets\js\owl.carousel.min.js" />
     <Content Include="assets\js\popper.min.js" />
     <Content Include="assets\js\scrollax.min.js" />
+    <Content Include="ClientResources\iPhone4\device-320x480.png" />
+    <Content Include="ClientResources\iPhone4\iPhone4.css" />
     <Content Include="Foundation\Media\ReadMe.md" />
     <Content Include="Feature\Robots\ReadMe.md" />
     <None Include="Foundation\BlockPreview\ReadMe.md" />
