@@ -24,6 +24,7 @@ Currently using a semi Sitecore Helix approach.
 ## Useful links
 - Fontawesome thumbnails: https://github.com/Geta/Epi.FontThumbnail
   - i like this more than my `ImageUrlGenerator` feature
+- Fontawesome in TinyMCE: https://blog.nicolaayan.com/2018/10/expose-fontawesome-icons-to-the-episerver-rich-text-editor/
 - 404 and redirect manager: https://github.com/Geta/404handler
 - Sitemap: https://github.com/Geta/SEO.Sitemaps
 - Sharing find across multiple developers: https://world.episerver.com/documentation/developer-guides/find/reindexing-a-site-without-affecting-other-developer-indexes/

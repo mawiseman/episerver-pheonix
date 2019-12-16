@@ -28,6 +28,10 @@ namespace Feature.Testimony.Models.Blocks
             Order = 2)]
         public virtual string SubHeading { get; set; }
 
+        /// <summary>
+        /// Alternative approach would be to use a ContentArea.
+        /// This would enable personalisation
+        /// </summary>
         [CultureSpecific]
         [Display(
             Name = "Testimonies",

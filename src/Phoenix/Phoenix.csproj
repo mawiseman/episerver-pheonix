@@ -271,6 +271,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets-wemeet\" />
     <Folder Include="Models\Blocks\" />
     <Folder Include="Models\Media\" />
     <Folder Include="Models\Properties\" />
@@ -373,6 +374,7 @@
     <Content Include="Foundation\Media\ReadMe.md" />
     <Content Include="Feature\Robots\ReadMe.md" />
     <None Include="Foundation\BlockPreview\ReadMe.md" />
+    <Content Include="maintenancepage.htm" />
     <Content Include="Views\Web.config" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
