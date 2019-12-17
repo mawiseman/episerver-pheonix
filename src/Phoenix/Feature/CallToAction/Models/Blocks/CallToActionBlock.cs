@@ -16,8 +16,12 @@ namespace Feature.CallToAction.Models.Blocks
     public class CallToActionBlock : BlockData
     {
         [CultureSpecific]
-        [Display(Name = "Title", Order = 100)]
-        public virtual string Title { get; set; }
+        [Display(Name = "Sub Heading", Order = 90)]
+        public virtual string SubHeading { get; set; }
+
+        [CultureSpecific]
+        [Display(Name = "Heading", Order = 100)]
+        public virtual string Heading { get; set; }
 
         [CultureSpecific]
         [Display(Name = "Blurb", Order = 200)]
