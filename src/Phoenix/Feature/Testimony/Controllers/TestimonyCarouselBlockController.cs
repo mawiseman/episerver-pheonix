@@ -19,12 +19,24 @@ namespace Feature.Testimony.Controllers
 
         public override ActionResult Index(TestimonyCarouselBlock currentBlock)
         {
-            var viewModel = new TestimonyCarouselBlockViewModel
+            var viewModel = new TestimonyCarouselBlockViewModel();
+
+            if (currentBlock != null)
             {
-                Heading = currentBlock.Heading,
-                SubHeading = currentBlock.SubHeading,
-                Testimonies = _contentLoader.GetItems(currentBlock.Testimonies, new LoaderOptions() { LanguageLoaderOption.FallbackWithMaster() }).Cast<TestimonyBlock>().ToList()
-            };
+                viewModel = new TestimonyCarouselBlockViewModel
+                {
+                    Heading = currentBlock.Heading,
+                    SubHeading = currentBlock.SubHeading
+                };
+
+                if(currentBlock.Testimonies != null)
+                {
+                    viewModel.Testimonies = _contentLoader
+                        .GetItems(currentBlock.Testimonies, new LoaderOptions() { LanguageLoaderOption.FallbackWithMaster() })
+                        .Cast<TestimonyBlock>()
+                        .ToList();
+                }
+            }
 
             return PartialView("~/Feature/Testimony/Views/TestimonyCarouselBlock/Index.cshtml", viewModel);
         }

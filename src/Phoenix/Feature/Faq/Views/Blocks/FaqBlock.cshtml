@@ -1,0 +1,29 @@
+﻿@using EPiServer.Web.Mvc.Html
+@using EPiServer.Core
+@model Feature.Faq.Models.Blocks.FaqBlock
+@{ 
+    var content = Model as IContent;
+
+    var shortGuid = System.Text.RegularExpressions.Regex.Replace(Convert.ToBase64String(content.ContentGuid.ToByteArray()), "[/+=]", "");    
+
+    var headingId = "heading-" + shortGuid;
+    var collapseId = "collapse-" + shortGuid;
+}
+<div class="card">
+    <div class="card-header" id="@headingId">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" 
+                    data-toggle="collapse" data-target="#@collapseId" 
+                    aria-expanded="false" aria-controls="@collapseId">
+
+                <img src="/assets-wemeet/img/barnd/info.png" alt=""> @Html.PropertyFor(m => m.Question)
+            </button>
+        </h5>
+    </div>
+    <div id="@collapseId" class="collapse" 
+         aria-labelledby="@headingId" data-parent="#accordion" style="">
+        <div class="card-body">
+            @Html.PropertyFor(m => m.Answer)
+        </div>
+    </div>
+</div>

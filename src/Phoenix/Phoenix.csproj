@@ -219,6 +219,10 @@
     <Compile Include="Business\Site\SiteTabNames.cs" />
     <Compile Include="Controllers\StandardPageController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
+    <Compile Include="Feature\Faq\Controllers\FaqsBlockController.cs" />
+    <Compile Include="Feature\Faq\Models\Blocks\FaqBlock.cs" />
+    <Compile Include="Feature\Faq\Models\Blocks\FaqsBlock.cs" />
+    <Compile Include="Feature\Faq\RegisterBlockViews.cs" />
     <Compile Include="Feature\Robots\Business\RobotsInitializationModule.cs" />
     <Compile Include="Feature\Robots\Controllers\RobotsController.cs" />
     <Compile Include="Feature\Robots\Models\Blocks\RobotsBlock.cs" />
@@ -277,6 +281,8 @@
     <Folder Include="Models\Properties\" />
     <Folder Include="Static\" />
     <Folder Include="Views\BlockPreview\" />
+    <Folder Include="Views\Faq\" />
+    <Folder Include="Views\PageScripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\about.html" />
@@ -371,8 +377,12 @@
     <Content Include="assets\js\scrollax.min.js" />
     <Content Include="ClientResources\iPhone4\device-320x480.png" />
     <Content Include="ClientResources\iPhone4\iPhone4.css" />
+    <Compile Include="Feature\Faq\ViewModels\FaqsBlockViewModel.cs" />
     <Content Include="Foundation\Media\ReadMe.md" />
     <Content Include="Feature\Robots\ReadMe.md" />
+    <Content Include="Feature\Faq\Views\Blocks\FaqBlock.cshtml" />
+    <Content Include="Feature\Faq\Views\FaqsBlock\Index.cshtml" />
+    <Content Include="Feature\Faq\Views\Web.config" />
     <None Include="Foundation\BlockPreview\ReadMe.md" />
     <Content Include="maintenancepage.htm" />
     <Content Include="Views\Web.config" />

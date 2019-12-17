@@ -4,6 +4,7 @@ using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using Feature.CallToAction.Models.Blocks;
+using Feature.Faq.Models.Blocks;
 using Feature.MetaData.Models.Blocks;
 using Feature.MetaData.Models.Pages;
 using Feature.PageScripts.Models.Blocks;
@@ -34,7 +35,7 @@ namespace Phoenix.Models.Pages
         [Display(Name = "Main content area",
             GroupName = SystemTabNames.Content,
             Order = 100)]
-        [AllowedTypes(new[] { typeof(RichTextBlock), typeof(CallToActionBlock), typeof(TestimonyCarouselBlock) })]
+        [AllowedTypes(new[] { typeof(RichTextBlock), typeof(CallToActionBlock), typeof(TestimonyCarouselBlock), typeof(FaqsBlock) })]
         public virtual ContentArea MainContent { get; set; }
     }
 }

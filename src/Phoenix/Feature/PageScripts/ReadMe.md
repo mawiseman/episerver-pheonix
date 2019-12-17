@@ -9,23 +9,21 @@ Scripts can be applied at the the following levels
 - Page scripts (individual pages)
 
 At each of the levels the following script locations are avaliable
-- Page header
-- Body start
-- Body end
+- Page Header
+- Body Start
+- Body End
 
 ## Usage
 
 #### 1. Implement `IHasGlobalPageScripts`
 
-On the page that authors should edit Global page scripts, implement `IHasGlobalPageScripts`. 
-
-i.e. Your sites `StartPage`
+Implement `IHasGlobalPageScripts` on your Start page: `SiteDefinition.Current.StartPage`. 
 
 ```
 public class StartPage : BasePage, IHasGlobalPageScripts
 {
 	[Display(Name = "Global Page Scripts", 
-		GroupName = "Global Page Scripts", 
+		GroupName = "Site Settings", 
 		Order = 600, 
 		Description = "These scripts will be rendered on every page in the site")]
 	virtual public PageScriptsBlock GlobalPageScripts { get; set; }
@@ -34,7 +32,7 @@ public class StartPage : BasePage, IHasGlobalPageScripts
 
 #### 2. Implement `IHasPageScripts`
 
-On the pages that authors can edit page scripts, implement `IHasPageScripts`
+On any page that authors can edit page scripts, implement `IHasPageScripts`
 
 i.e. Your sites `BasePage` that all pages inherit from
 

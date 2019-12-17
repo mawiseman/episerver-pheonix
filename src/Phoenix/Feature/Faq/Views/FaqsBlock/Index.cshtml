@@ -1,0 +1,25 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model Feature.Faq.Models.ViewModels.FaqsBlockViewModel
+
+<div class="faq_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="serction_title_large mb-95">
+                    <h3>
+                        @Html.PropertyFor(m => m.Heading)
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div id="accordion">
+                    @Html.PropertyFor(m => m.Faqs)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
