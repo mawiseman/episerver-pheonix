@@ -24,6 +24,8 @@
 
     @RenderBody()
 
+    @Html.Partial(Feature.Footer.Constants.ViewPaths.Footer, Model.CurrentPage)
+
     @Html.Partial("_ThemeScripts", Model)
 
     @Html.Partial(Feature.PageScripts.Constants.ViewPaths.GlobalPageBodyEndScripts, Model.CurrentPage)

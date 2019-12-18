@@ -1,0 +1,68 @@
+﻿@using Feature.Footer.Models.Pages
+@using EPiServer
+@using EPiServer.Core
+@using EPiServer.ServiceLocation
+@using EPiServer.Web
+@model EPiServer.Core.PageData
+@{
+    var contentLoader = ServiceLocator.Current.GetInstance<IContentLoader>();
+
+    var startPage = contentLoader.Get<PageData>(SiteDefinition.Current.StartPage);
+
+    if (!(startPage is IHasFooterContent))
+    {
+        return;
+    }
+
+    var footerContent = ((IHasFooterContent)startPage).FooterContent;
+}
+<footer class="footer footer_bg_1">
+    <div class="circle_ball d-none d-lg-block">
+        <img src="/assets-wework/img/banner/footer_ball.png" alt="">
+    </div>
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 col-lg-4">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            @Html.Raw(footerContent.ColumnOneTitle)
+                        </h3>
+
+                        @Html.Raw(footerContent.ColumnOne)
+
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 col-lg-4">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            @Html.Raw(footerContent.ColumnTwoTitle)
+                        </h3>
+
+                        @Html.Raw(footerContent.ColumnTwo)
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 col-lg-4">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            @Html.Raw(footerContent.ColumnThreeTitle)
+                        </h3>
+                        @Html.Raw(footerContent.ColumnThree)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copy-right_text">
+        <div class="container">
+            <div class="footer_border"></div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <p class="copy_right text-center">
+                        @Html.Raw(footerContent.Copyright)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

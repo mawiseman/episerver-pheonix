@@ -223,6 +223,9 @@
     <Compile Include="Feature\Faq\Models\Blocks\FaqBlock.cs" />
     <Compile Include="Feature\Faq\Models\Blocks\FaqsBlock.cs" />
     <Compile Include="Feature\Faq\RegisterBlockViews.cs" />
+    <Compile Include="Feature\Footer\Constants.cs" />
+    <Compile Include="Feature\Footer\Models\Blocks\FooterBlock.cs" />
+    <Compile Include="Feature\Footer\Models\Pages\IHasFooterContent.cs" />
     <Compile Include="Feature\Robots\Business\RobotsInitializationModule.cs" />
     <Compile Include="Feature\Robots\Controllers\RobotsController.cs" />
     <Compile Include="Feature\Robots\Models\Blocks\RobotsBlock.cs" />
@@ -629,6 +632,8 @@
     <Content Include="assets-wemeet\scss\_team.scss" />
     <Content Include="assets-wemeet\scss\_testmonial.scss" />
     <Content Include="assets-wemeet\scss\_varriable.scss" />
+    <Content Include="Feature\Footer\Views\Blocks\_Footer.cshtml" />
+    <Content Include="Feature\Footer\Views\Web.config" />
     <None Include="Foundation\BlockPreview\ReadMe.md" />
     <Content Include="maintenancepage.htm" />
     <Content Include="Views\Web.config" />

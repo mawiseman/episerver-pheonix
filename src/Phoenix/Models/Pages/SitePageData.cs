@@ -23,8 +23,7 @@ namespace Phoenix.Models.Pages
 
         [Display(Name = "Page Scripts", GroupName = SiteTabNames.PageScripts)]
         public virtual PageScriptsBlock PageScripts { get; set; }
-
-
+        
         [CultureSpecific]
         [Display(Name = "Page Title",
             GroupName = SystemTabNames.Content,

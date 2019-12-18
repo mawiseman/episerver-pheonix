@@ -9,6 +9,8 @@ using Phoenix.Business.Site;
 using System.ComponentModel.DataAnnotations;
 using Feature.Robots.Models.Blocks;
 using Feature.Robots.Models.Pages;
+using Feature.Footer.Models.Blocks;
+using Feature.Footer.Models.Pages;
 
 namespace Phoenix.Models.Pages
 {
@@ -18,7 +20,7 @@ namespace Phoenix.Models.Pages
     [AvailableContentTypes(Include = new[] { typeof(StandardPage) })]
     [ContentIcon(ContentIcon.ObjectStart)]
     [ImageUrlGenerator("Start Page")]
-    public class StartPage : SitePageData, IHasGlobalPageScripts, IHasRobots
+    public class StartPage : SitePageData, IHasGlobalPageScripts, IHasRobots, IHasFooterContent
     {
         [Display(Name = "Global Page Scripts", 
             GroupName = SiteTabNames.SiteSettings, 
@@ -31,5 +33,11 @@ namespace Phoenix.Models.Pages
             Order = 700,
             Description = "Content for robots.txt")]
         virtual public RobotsBlock Robots { get; set; }
+
+        [Display(Name = "Footer Content",
+            GroupName = SiteTabNames.SiteSettings,
+            Order = 800,
+            Description = "Footer Content")]
+        virtual public FooterBlock FooterContent { get; set; }
     }
 }
