@@ -226,10 +226,14 @@
     <Compile Include="Feature\Footer\Constants.cs" />
     <Compile Include="Feature\Footer\Models\Blocks\FooterBlock.cs" />
     <Compile Include="Feature\Footer\Models\Pages\IHasFooterContent.cs" />
+    <Compile Include="Feature\Robots\Business\RobotsConfigurationModule.cs" />
     <Compile Include="Feature\Robots\Business\RobotsInitializationModule.cs" />
     <Compile Include="Feature\Robots\Controllers\RobotsController.cs" />
     <Compile Include="Feature\Robots\Models\Blocks\RobotsBlock.cs" />
     <Compile Include="Feature\Robots\Models\Pages\IHasRobots.cs" />
+    <Compile Include="Feature\Robots\Models\Pages\RobotsSettingsPage.cs" />
+    <Compile Include="Feature\Robots\Repositories\IRobotsRepository.cs" />
+    <Compile Include="Feature\Robots\Repositories\RobotsRepository.cs" />
     <Compile Include="Foundation\BlockPreview\Controllers\BlockPreviewController.cs" />
     <Compile Include="Feature\CallToAction\Models\Blocks\CallToActionBlock.cs" />
     <Compile Include="Feature\CallToAction\RegisterBlockViews.cs" />
@@ -270,6 +274,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Business\Helpers\UrlHelpers.cs" />
+    <Compile Include="Models\Pages\SettingsPage.cs" />
     <Compile Include="Models\Pages\SitePageData.cs" />
     <Compile Include="Models\Pages\StandardPage.cs" />
     <Compile Include="Models\Pages\StartPage.cs" />

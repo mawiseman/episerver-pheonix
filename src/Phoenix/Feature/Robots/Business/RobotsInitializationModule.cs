@@ -1,5 +1,9 @@
-﻿using EPiServer.Framework;
+﻿using EPiServer.Core;
+using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
+using EPiServer.ServiceLocation;
+using Feature.Robots.Repositories;
+using System;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -11,17 +15,47 @@ namespace Phoenix.Feature.Robots.Business
     {
         private const string RobotsTxtRoute = "RobotsTxtRoute";
 
+        private Lazy<IContentEvents> _contentEvents = new Lazy<IContentEvents>(() => ServiceLocator.Current.GetInstance<IContentEvents>());
+        private IRobotsRepository _robotsRepository;
+
         public void Initialize(InitializationEngine context)
         {
+            // Add the route mapping for /robots.txt
+
             RouteTable.Routes.MapRoute(
                RobotsTxtRoute,
                "robots.txt",
                new { controller = "RobotsTxt", action = "Index" });
+
+            // Add an event handler to clear cache on publish even of 
+
+            _contentEvents.Value.CreatingContent += CreatingContent;
+            _contentEvents.Value.PublishedContent += PublishedContent;
+
+            // load required services;
+
+            _robotsRepository = context.Locate.Advanced.GetService(typeof(IRobotsRepository)) as IRobotsRepository;
+            
         }
 
         public void Uninitialize(InitializationEngine context)
         {
             RouteTable.Routes.Remove(RouteTable.Routes[RobotsTxtRoute]);
+        }
+
+        private void CreatingContent(object sender, EPiServer.ContentEventArgs e)
+        {
+            bool shouldCancel = _robotsRepository.ShouldCancelRobotsPageCreation(e.Content.ContentTypeID);
+
+            if(shouldCancel)
+            {
+                e.CancelAction = true;
+                e.CancelReason = "A Robots Settings Page already exists";
+            }
+        }
+        private void PublishedContent(object sender, EPiServer.ContentEventArgs e)
+        {
+            _robotsRepository.ClearRobotsCache(e.Content.ContentTypeID);
         }
     }
 }

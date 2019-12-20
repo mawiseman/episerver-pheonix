@@ -20,19 +20,13 @@ namespace Phoenix.Models.Pages
     [AvailableContentTypes(Include = new[] { typeof(StandardPage) })]
     [ContentIcon(ContentIcon.ObjectStart)]
     [ImageUrlGenerator("Start Page")]
-    public class StartPage : SitePageData, IHasGlobalPageScripts, IHasRobots, IHasFooterContent
+    public class StartPage : SitePageData, IHasGlobalPageScripts, IHasFooterContent
     {
         [Display(Name = "Global Page Scripts", 
             GroupName = SiteTabNames.SiteSettings, 
             Order = 600, 
             Description = "These scripts will be rendered on every page in the site")]
         virtual public PageScriptsBlock GlobalPageScripts { get; set; }
-
-        [Display(Name = "Robots.txt",
-            GroupName = SiteTabNames.SiteSettings,
-            Order = 700,
-            Description = "Content for robots.txt")]
-        virtual public RobotsBlock Robots { get; set; }
 
         [Display(Name = "Footer Content",
             GroupName = SiteTabNames.SiteSettings,
