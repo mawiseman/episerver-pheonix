@@ -6,7 +6,8 @@ namespace Feature.Navigation.Services
 {
     public interface INavigationService
     {
-        List<MenuItem> GetPrimaryNavigation();
-        List<MenuItem> GetChildItems(ContentReference rootLink);
+        void ClearNavigationCache();
+        List<MenuItem> GetPrimaryNavigation(bool ignoreCache);
+        List<MenuItem> GetPrimaryNavigationChildItems(ContentReference rootLink);
     }
 }

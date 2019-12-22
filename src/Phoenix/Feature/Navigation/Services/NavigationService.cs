@@ -11,6 +11,8 @@ namespace Feature.Navigation.Services
 {
     public class NavigationService : INavigationService
     {
+        const string PrimaryNavigationCacheKey = "Feature.Navigation.Services.NavigationService.PrimaryNavigationCacheKey";
+
         private readonly IContentLoader _contentLoader;
         private readonly IPageRouteHelper _pageRouteHelper;
 
@@ -20,25 +22,37 @@ namespace Feature.Navigation.Services
             _pageRouteHelper = pageRouteHelper;
         }
 
-        public List<MenuItem> GetPrimaryNavigation()
+        public void ClearNavigationCache()
         {
-            var startPage = _contentLoader.Get<PageData>(SiteDefinition.Current.StartPage);
+            CacheManager.Remove(PrimaryNavigationCacheKey);
+        }
 
-            List<MenuItem> primaryNavigation = new List<MenuItem>
+        public List<MenuItem> GetPrimaryNavigation(bool ignoreCache)
+        {
+            if (ignoreCache || !(CacheManager.Get(PrimaryNavigationCacheKey) is List<MenuItem> primaryNavigation))
             {
-                new MenuItem
-                {
-                    Page = startPage,
-                    Selected = _pageRouteHelper.Page.ContentLink.CompareToIgnoreWorkID(startPage.ContentLink)                    
-                }
-            };
+                var startPage = _contentLoader.Get<PageData>(SiteDefinition.Current.StartPage);
 
-            primaryNavigation.AddRange(GetChildItems(startPage.ContentLink));
+                primaryNavigation = new List<MenuItem>
+                {
+                    new MenuItem
+                    {
+                        Page = startPage,
+                        Selected = _pageRouteHelper.Page.ContentLink.CompareToIgnoreWorkID(startPage.ContentLink)
+                    }
+                };
+
+                primaryNavigation.AddRange(GetPrimaryNavigationChildItems(startPage.ContentLink));
+
+                // Update the cache
+
+                CacheManager.Insert(PrimaryNavigationCacheKey, primaryNavigation);
+            }
 
             return primaryNavigation;
         }
 
-        public List<MenuItem> GetChildItems(ContentReference rootLink)
+        public List<MenuItem> GetPrimaryNavigationChildItems(ContentReference rootLink)
         {
             var currentContentLink = _pageRouteHelper.Page.ContentLink;
 
@@ -57,7 +71,7 @@ namespace Feature.Navigation.Services
                     Page = page,
                     Selected = page.ContentLink.CompareToIgnoreWorkID(currentContentLink)
                             || pagePath.Contains(page.ContentLink),
-                    Children = GetChildItems(page.ContentLink)
+                    Children = GetPrimaryNavigationChildItems(page.ContentLink)
                 }
                 )
                 .ToList();

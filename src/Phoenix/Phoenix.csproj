@@ -227,6 +227,7 @@
     <Compile Include="Feature\Footer\Models\Blocks\FooterBlock.cs" />
     <Compile Include="Feature\Footer\Models\Pages\IHasFooterContent.cs" />
     <Compile Include="Feature\Navigation\Business\NavigationConfigurationModule.cs" />
+    <Compile Include="Feature\Navigation\Business\NavigationInitializationModule.cs" />
     <Compile Include="Feature\Navigation\Constants.cs" />
     <Compile Include="Feature\Navigation\Controllers\NavigationController.cs" />
     <Compile Include="Feature\Navigation\Models\MenuItem.cs" />
@@ -651,7 +652,7 @@
     <Content Include="assets-wemeet\scss\_varriable.scss" />
     <Content Include="Feature\Footer\Views\Blocks\_Footer.cshtml" />
     <Content Include="Feature\Footer\Views\Web.config" />
-    <Content Include="Feature\Navigation\Views\PrimaryNavigation.cshtml" />
+    <Content Include="Feature\Navigation\Views\Navigation\PrimaryNavigation.cshtml" />
     <Content Include="Feature\Navigation\Views\Web.config" />
     <None Include="Foundation\BlockPreview\ReadMe.md" />
     <Content Include="maintenancepage.htm" />

@@ -1,4 +1,5 @@
-﻿using Feature.Navigation.Services;
+﻿using EPiServer.Web.Mvc;
+using Feature.Navigation.Services;
 using System.Web.Mvc;
 
 namespace Feature.Navigation.Controllers
@@ -13,11 +14,12 @@ namespace Feature.Navigation.Controllers
         }
 
         [HttpGet]
-        public ActionResult PrimaryNavigation()
+        [ChildActionOnly]
+        public ActionResult PrimaryNavigation(bool? ignoreCache = false)
         {
-            var viewModel = _navigationService.GetPrimaryNavigation();
+            var viewModel = _navigationService.GetPrimaryNavigation(ignoreCache.Value);
 
-            return View("~/Feature/Navigation/Views/PrimaryNavigation.cshtml", viewModel);
+            return PartialView("~/Feature/Navigation/Views/Navigation/PrimaryNavigation.cshtml", viewModel);
         }
     }
 }

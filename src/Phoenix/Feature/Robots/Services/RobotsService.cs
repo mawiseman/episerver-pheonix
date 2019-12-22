@@ -12,7 +12,7 @@ namespace Feature.Robots.Services
 {
     public class RobotsService : IRobotsService
     {
-        const string RobotsSettingsPageCacheKey = "Feature.Robots.RepositoriesRobotsRepository.RobotsSettingsPage";
+        const string RobotsSettingsPageCacheKey = "Feature.Robots.Services.RobotsService.RobotsSettingsPageCacheKey";
 
         private readonly IContentLoader _contentLoader;
         private readonly IContentTypeRepository _contentTypeRepository;
