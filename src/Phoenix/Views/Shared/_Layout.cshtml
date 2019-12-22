@@ -22,6 +22,39 @@
     @Html.RenderEPiServerQuickNavigator() @*Renders the EPI Orange Shorcut bar at the top of the page*@
     @Html.FullRefreshPropertiesMetaData()
 
+    <header>
+        <div class="header-area">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center justify-content-between no-gutters">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo-img">
+                                <a href="index.html">
+                                    <img src="/assets-wemeet/img/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8">
+                            <div class="main-menu  d-none d-lg-block">
+
+                                @{ Html.RenderAction("PrimaryNavigation", "Navigation"); }
+
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 d-none d-lg-block">
+                            <div class="buy_ticket">
+                                <a href="#" class="boxed-btn-white">Buy Ticket</a>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
     @RenderBody()
 
     @Html.Partial(Feature.Footer.Constants.ViewPaths.Footer, Model.CurrentPage)

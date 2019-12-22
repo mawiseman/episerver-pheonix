@@ -1,0 +1,28 @@
+﻿@using EPiServer.Web.Mvc.Html
+@model List<Feature.Navigation.Models.MenuItem>
+<nav>
+    <ul id="navigation">
+        @foreach (var menuItem in Model)
+        {
+            var active = menuItem.Selected ? "active" : "";
+
+            <li class="@active">
+                @Html.PageLink(menuItem.Page)
+
+                @if (menuItem.Children.Any())
+                {
+                    <ul class="submenu">
+                        @foreach (var subMenuItem in menuItem.Children)
+                        {
+                            var subActive = subMenuItem.Selected ? "active" : "";
+
+                            <li class="@subActive">
+                                @Html.PageLink(subMenuItem.Page)
+                            </li>
+                        }
+                    </ul>
+                }
+            </li>
+        }
+    </ul>
+</nav>

@@ -226,11 +226,17 @@
     <Compile Include="Feature\Footer\Constants.cs" />
     <Compile Include="Feature\Footer\Models\Blocks\FooterBlock.cs" />
     <Compile Include="Feature\Footer\Models\Pages\IHasFooterContent.cs" />
+    <Compile Include="Feature\Navigation\Business\NavigationConfigurationModule.cs" />
+    <Compile Include="Feature\Navigation\Constants.cs" />
+    <Compile Include="Feature\Navigation\Controllers\NavigationController.cs" />
+    <Compile Include="Feature\Navigation\Models\MenuItem.cs" />
+    <Compile Include="Feature\Navigation\Services\INavigationService.cs" />
+    <Compile Include="Feature\Navigation\Services\NavigationService.cs" />
     <Compile Include="Feature\PageScripts\Business\PageScriptsConfigurationModule.cs" />
     <Compile Include="Feature\PageScripts\Business\PageScriptsInitializationModule.cs" />
     <Compile Include="Feature\PageScripts\Models\Pages\PageScriptsSettingsPage.cs" />
-    <Compile Include="Feature\PageScripts\Models\Services\IPageScriptService.cs" />
-    <Compile Include="Feature\PageScripts\Models\Services\PageScriptService.cs" />
+    <Compile Include="Feature\PageScripts\Services\IPageScriptService.cs" />
+    <Compile Include="Feature\PageScripts\Services\PageScriptService.cs" />
     <Compile Include="Feature\Robots\Business\RobotsConfigurationModule.cs" />
     <Compile Include="Feature\Robots\Business\RobotsInitializationModule.cs" />
     <Compile Include="Feature\Robots\Controllers\RobotsController.cs" />
@@ -294,6 +300,7 @@
     <Folder Include="Static\" />
     <Folder Include="Views\BlockPreview\" />
     <Folder Include="Views\Faq\" />
+    <Folder Include="Views\Navigation\" />
     <Folder Include="Views\PageScripts\" />
   </ItemGroup>
   <ItemGroup>
@@ -644,6 +651,8 @@
     <Content Include="assets-wemeet\scss\_varriable.scss" />
     <Content Include="Feature\Footer\Views\Blocks\_Footer.cshtml" />
     <Content Include="Feature\Footer\Views\Web.config" />
+    <Content Include="Feature\Navigation\Views\PrimaryNavigation.cshtml" />
+    <Content Include="Feature\Navigation\Views\Web.config" />
     <None Include="Foundation\BlockPreview\ReadMe.md" />
     <Content Include="maintenancepage.htm" />
     <Content Include="Views\Web.config" />
