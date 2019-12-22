@@ -654,6 +654,7 @@
     <Content Include="Feature\Footer\Views\Web.config" />
     <Content Include="Feature\Navigation\Views\Navigation\PrimaryNavigation.cshtml" />
     <Content Include="Feature\Navigation\Views\Web.config" />
+    <Content Include="Feature\Navigation\ReadMe.md" />
     <None Include="Foundation\BlockPreview\ReadMe.md" />
     <Content Include="maintenancepage.htm" />
     <Content Include="Views\Web.config" />
