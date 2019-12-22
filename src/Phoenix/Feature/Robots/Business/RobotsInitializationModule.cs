@@ -2,12 +2,12 @@
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
-using Feature.Robots.Repositories;
+using Feature.Robots.Services;
 using System;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Phoenix.Feature.Robots.Business
+namespace Feature.Robots.Business
 {
     [InitializableModule]
     [ModuleDependency(typeof(EPiServer.Web.InitializationModule))]

@@ -11,12 +11,12 @@ using Foundation.ImageUrlGenerator.Business.DataAnnotations;
 
 namespace Feature.Robots.Models.Pages
 {
-    [ContentType(DisplayName = "RobotsSettingsPage", 
+    [ContentType(DisplayName = "Robots.txt Settings Page", 
         GUID = "110d598e-3b8c-4bf7-89fa-076f69d8b19f", 
         Description = "")]
     [AvailableContentTypes(Availability = Availability.None)]
     [ContentIcon(ContentIcon.ObjectUnknown)]
-    [ImageUrlGenerator("Robots Settings")]
+    [ImageUrlGenerator("Robots.txt Settings")]
     public class RobotsSettingsPage : PageData, IHasRobots
     {
         [Display(

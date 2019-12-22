@@ -1,6 +1,7 @@
 ﻿using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
+using Feature.PageScripts.Models.Pages;
 using Feature.Robots.Models.Pages;
 using Foundation.ContentIcons;
 using Foundation.ContentIcons.Business.DataAnnotations;
@@ -13,7 +14,7 @@ namespace Phoenix.Models.Pages
         Description = "")]
     [ImageUrlGenerator("Site Settings")]
     [ContentIcon(ContentIcon.Settings)]
-    [AvailableContentTypes(Include = new[] { typeof(RobotsSettingsPage) })]
+    [AvailableContentTypes(Include = new[] { typeof(RobotsSettingsPage), typeof(PageScriptsSettingsPage) })]
     public class SettingsPage : PageData
     {
         

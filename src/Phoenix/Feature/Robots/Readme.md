@@ -4,14 +4,12 @@
 
 Provides robots.txt functionality for your website
 
-## Features
 - Display values at `/robots.txt`
-- Caches value until publish
+- Caches value until next publish
 - Test without cache `/robots.txt?ignorecache=true`
-- Prevents multiple `Rbots Settings Pages`
+- Prevents multiple `Robots Settings Pages`
 
-
-## ToDo
+### ToDo
 - Test in multi-site
 - Improve multiple page prevention i.e. check trash / un-published
 
@@ -26,7 +24,7 @@ This feature can used in 2 ways
 Implement `IHasRobots` on your Start page: `SiteDefinition.Current.StartPage`. 
 
 ```
-public abstract class StartPage : PageData, IHasRobots
+public class StartPage : PageData, IHasRobots
 {
     [Display(Name = "Robots.txt",
         GroupName = "Site Settings",

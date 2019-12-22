@@ -1,9 +1,9 @@
 ﻿using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
-using Feature.Robots.Repositories;
+using Feature.Robots.Services;
 
-namespace Phoenix.Feature.Robots.Business
+namespace Feature.Robots.Business
 {
     [ModuleDependency(typeof(EPiServer.Web.InitializationModule))]
     public class RobotsConfigurationModule : IConfigurableModule

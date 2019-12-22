@@ -1,22 +1,14 @@
-﻿@using Feature.PageScripts.Models.Pages
-@using EPiServer
-@using EPiServer.Core
-@using EPiServer.ServiceLocation
-@using EPiServer.Web
+﻿@using EPiServer.ServiceLocation
+@using Feature.PageScripts.Services
 @model EPiServer.Core.PageData
 @{
-    var contentLoader = ServiceLocator.Current.GetInstance<IContentLoader>();
+    var globalPageScriptsService = ServiceLocator.Current.GetInstance<IPageScriptService>();
 
-    var startPage = contentLoader.Get<PageData>(SiteDefinition.Current.StartPage);
-
-    if (!(startPage is IHasGlobalPageScripts) || EPiServer.Editor.PageEditing.PageIsInEditMode)
-    {
-        return;
-    }
-
-    var pageScripts = ((IHasGlobalPageScripts)startPage).GlobalPageScripts;
+    var ignoreCache = false;
+    Boolean.TryParse(Request.QueryString["ignoreCache"], out ignoreCache);
+    var globalPageScriptsPage = globalPageScriptsService.GetGlobalPageScripts(ignoreCache);
 }
-@if (!string.IsNullOrEmpty(pageScripts.PageBodyStartScript))
+@if (!string.IsNullOrEmpty(globalPageScriptsPage.GlobalPageScripts.PageBodyStartScript))
 {
-    @Html.Raw(pageScripts.PageBodyStartScript)
+    @Html.Raw(globalPageScriptsPage.GlobalPageScripts.PageBodyStartScript)
 }

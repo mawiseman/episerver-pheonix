@@ -1,14 +1,6 @@
-﻿using EPiServer;
-using EPiServer.Cms.Shell.Service;
-using EPiServer.Core;
-using EPiServer.Web;
-using EPiServer.Web.Mvc;
+﻿using EPiServer.Web.Mvc;
 using Feature.Robots.Models.Pages;
-using Feature.Robots.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using Feature.Robots.Services;
 using System.Web.Mvc;
 
 namespace Phoenix.Feature.Robots.Controllers

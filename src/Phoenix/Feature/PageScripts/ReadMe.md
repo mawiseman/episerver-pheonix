@@ -13,14 +13,33 @@ At each of the levels the following script locations are avaliable
 - Body Start
 - Body End
 
+### Features
+- Caches global scripts page until next publish
+- Test without cache `/?ignorecache=true`
+- Prevents multiple `Page Script Settings Pages`
+
+### ToDo
+- Test in multi-site
+- Improve multiple page prevention i.e. check trash / un-published
+
 ## Usage
 
-#### 1. Implement `IHasGlobalPageScripts`
+1. Implemnt the Global Page Scripts
+2. Implement the Page Scripts
+
+### 1. Adding Global Page Scripts
+
+This part of the  feature can used in 2 ways
+1. Adding Global Page Scripts to your `Start page`
+2. Creating a dedicated `Page Scripts Settings Page`
+3. Add the rendering to your layout
+
+#### Adding Global Page Scripts to your Start page
 
 Implement `IHasGlobalPageScripts` on your Start page: `SiteDefinition.Current.StartPage`. 
 
 ```
-public class StartPage : BasePage, IHasGlobalPageScripts
+public class StartPage : PageData, IHasGlobalPageScripts
 {
 	[Display(Name = "Global Page Scripts", 
 		GroupName = "Site Settings", 
@@ -30,7 +49,31 @@ public class StartPage : BasePage, IHasGlobalPageScripts
 }
 ```
 
-#### 2. Implement `IHasPageScripts`
+#### Creating a dedicated Page Scripts Settings Page
+
+Add `PageScriptSettingsPage` to your `AvailableContentTypes` attribute of your settings page
+
+```
+Root
+├── Home
+└── Settings
+    └── Page Scripts
+```
+
+```
+[ContentType(DisplayName = "SettingsPage", 
+    GUID = "d838aac8-6500-4454-a25b-976966270c11", 
+    Description = "")]
+[ImageUrlGenerator("Site Settings")]
+[ContentIcon(ContentIcon.Settings)]
+[AvailableContentTypes(Include = new[] { typeof(PageScriptsSettingsPage) })]
+public class SettingsPage : PageData
+{
+        
+}
+```
+
+### 2. Adding Page Scripts
 
 On any page that authors can edit page scripts, implement `IHasPageScripts`
 
@@ -46,7 +89,7 @@ public class BasePage : IHasPageScripts
 }
 ```
 
-#### 3. Add Partial Renderings
+### 3. Add Partial Renderings
 
 On you shared layout add Partial Renderings for both Global Page Scripts and Page Scripts
 
