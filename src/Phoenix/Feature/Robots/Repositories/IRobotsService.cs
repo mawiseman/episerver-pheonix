@@ -6,13 +6,13 @@ using System.Web;
 
 namespace Feature.Robots.Repositories
 {
-    public interface IRobotsRepository
+    public interface IRobotsService
     {
-        bool ShouldCancelRobotsPageCreation(int newContentTypeID);
+        bool ShouldCancelRobotsSettingsPageCreation(int newContentTypeID);
 
-        void ClearRobotsCache(int newContentTypeID);
+        void ClearRobotsCache(int currentContentTypeID);
 
-        IHasRobots GetRobots();
+        IHasRobots GetRobots(bool ignoreCache);
 
         IHasRobots[] GetRobotsSettingsPages();
     }

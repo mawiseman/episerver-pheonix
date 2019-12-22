@@ -232,8 +232,8 @@
     <Compile Include="Feature\Robots\Models\Blocks\RobotsBlock.cs" />
     <Compile Include="Feature\Robots\Models\Pages\IHasRobots.cs" />
     <Compile Include="Feature\Robots\Models\Pages\RobotsSettingsPage.cs" />
-    <Compile Include="Feature\Robots\Repositories\IRobotsRepository.cs" />
-    <Compile Include="Feature\Robots\Repositories\RobotsRepository.cs" />
+    <Compile Include="Feature\Robots\Repositories\IRobotsService.cs" />
+    <Compile Include="Feature\Robots\Repositories\RobotsService.cs" />
     <Compile Include="Foundation\BlockPreview\Controllers\BlockPreviewController.cs" />
     <Compile Include="Feature\CallToAction\Models\Blocks\CallToActionBlock.cs" />
     <Compile Include="Feature\CallToAction\RegisterBlockViews.cs" />

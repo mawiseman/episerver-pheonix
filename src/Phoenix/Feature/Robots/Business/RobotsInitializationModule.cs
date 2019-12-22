@@ -16,7 +16,7 @@ namespace Phoenix.Feature.Robots.Business
         private const string RobotsTxtRoute = "RobotsTxtRoute";
 
         private Lazy<IContentEvents> _contentEvents = new Lazy<IContentEvents>(() => ServiceLocator.Current.GetInstance<IContentEvents>());
-        private IRobotsRepository _robotsRepository;
+        private IRobotsService _robotsService;
 
         public void Initialize(InitializationEngine context)
         {
@@ -32,10 +32,9 @@ namespace Phoenix.Feature.Robots.Business
             _contentEvents.Value.CreatingContent += CreatingContent;
             _contentEvents.Value.PublishedContent += PublishedContent;
 
-            // load required services;
+            // load required services
 
-            _robotsRepository = context.Locate.Advanced.GetService(typeof(IRobotsRepository)) as IRobotsRepository;
-            
+            _robotsService = context.Locate.Advanced.GetService(typeof(IRobotsService)) as IRobotsService;            
         }
 
         public void Uninitialize(InitializationEngine context)
@@ -45,7 +44,7 @@ namespace Phoenix.Feature.Robots.Business
 
         private void CreatingContent(object sender, EPiServer.ContentEventArgs e)
         {
-            bool shouldCancel = _robotsRepository.ShouldCancelRobotsPageCreation(e.Content.ContentTypeID);
+            bool shouldCancel = _robotsService.ShouldCancelRobotsSettingsPageCreation(e.Content.ContentTypeID);
 
             if(shouldCancel)
             {
@@ -53,9 +52,10 @@ namespace Phoenix.Feature.Robots.Business
                 e.CancelReason = "A Robots Settings Page already exists";
             }
         }
+
         private void PublishedContent(object sender, EPiServer.ContentEventArgs e)
         {
-            _robotsRepository.ClearRobotsCache(e.Content.ContentTypeID);
+            _robotsService.ClearRobotsCache(e.Content.ContentTypeID);
         }
     }
 }

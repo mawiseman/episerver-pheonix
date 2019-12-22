@@ -4,11 +4,22 @@
 
 Provides robots.txt functionality for your website
 
+## Features
+- Display values at `/robots.txt`
+- Caches value until publish
+- Test without cache `/robots.txt?ignorecache=true`
+- Prevents multiple `Rbots Settings Pages`
+
+
+## ToDo
+- Test in multi-site
+- Improve multiple page prevention i.e. check trash / un-published
+
 ## Usage
 
 This feature can used in 2 ways
-1. Adding Robots.txt to your Start page
-2. Creating a dedicated Robots Settings Page
+1. Adding Robots.txt to your `Start page`
+2. Creating a dedicated `Robots Settings Page`
 
 #### 1. Adding Robots.txt to your Start page
 
@@ -27,7 +38,7 @@ public abstract class StartPage : PageData, IHasRobots
 
 #### 2. Creating a dedicated Robots Settings Page
 
-Add `RobotsSettingsPage` as an AvailableContentTypes under you settings page
+Add `RobotsSettingsPage` to your `AvailableContentTypes` attribute of your settings page
 
 ```
 Root

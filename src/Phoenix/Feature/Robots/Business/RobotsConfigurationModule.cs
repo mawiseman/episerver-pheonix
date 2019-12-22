@@ -13,7 +13,7 @@ namespace Phoenix.Feature.Robots.Business
             // Register Servies
 
             var services = context.Services;
-            services.AddSingleton<IRobotsRepository, RobotsRepository>();
+            services.AddSingleton<IRobotsService, RobotsService>();
         }
 
         void IInitializableModule.Initialize(InitializationEngine context)

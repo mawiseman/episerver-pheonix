@@ -15,18 +15,18 @@ namespace Phoenix.Feature.Robots.Controllers
 {
     public class RobotsTxtController : Controller
     {
-        private readonly IRobotsRepository _robotsRepository;
+        private readonly IRobotsService _robotsService;
 
-        public RobotsTxtController(IRobotsRepository robotsRepository)
+        public RobotsTxtController(IRobotsService robotsService)
         {
-            _robotsRepository = robotsRepository;
+            _robotsService = robotsService;
         }
 
         [HttpGet]
         [ContentOutputCache]
-        public ActionResult Index()
+        public ActionResult Index(bool? ignoreCache = false)
         {
-            var robotsSettingPage = _robotsRepository.GetRobots();
+            var robotsSettingPage = _robotsService.GetRobots(ignoreCache.Value);
 
             if(robotsSettingPage is IHasRobots)
             {

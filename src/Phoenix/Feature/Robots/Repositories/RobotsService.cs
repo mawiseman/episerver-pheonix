@@ -2,35 +2,31 @@
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.Filters;
-using EPiServer.Framework.Cache;
 using EPiServer.Logging;
-using EPiServer.ServiceLocation;
 using EPiServer.Web;
 using Feature.Robots.Models.Pages;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace Feature.Robots.Repositories
 {
-    public class RobotsRepository : IRobotsRepository
+    public class RobotsService : IRobotsService
     {
         const string RobotsSettingsPageCacheKey = "Feature.Robots.RepositoriesRobotsRepository.RobotsSettingsPage";
 
         private readonly IContentLoader _contentLoader;
         private readonly IContentTypeRepository _contentTypeRepository;
         private readonly IPageCriteriaQueryService _pageCriteriaQueryService;
-        private readonly ILogger _logger = LogManager.GetLogger(typeof(RobotsRepository));
+        private readonly ILogger _logger = LogManager.GetLogger(typeof(RobotsService));
 
-        public RobotsRepository(IContentLoader contentLoader, IContentTypeRepository contentTypeRepository, IPageCriteriaQueryService pageCriteriaQueryService)
+        public RobotsService(IContentLoader contentLoader, IContentTypeRepository contentTypeRepository, IPageCriteriaQueryService pageCriteriaQueryService)
         {
             _contentLoader = contentLoader;
             _contentTypeRepository = contentTypeRepository;
             _pageCriteriaQueryService = pageCriteriaQueryService;
         }
 
-        public bool ShouldCancelRobotsPageCreation(int newContentTypeID)
+        public bool ShouldCancelRobotsSettingsPageCreation(int newContentTypeID)
         {
             if(newContentTypeID == _contentTypeRepository.Load(typeof(RobotsSettingsPage).Name).ID)
             {
@@ -44,17 +40,17 @@ namespace Feature.Robots.Repositories
             return false;
         }
 
-        public void ClearRobotsCache(int newContentTypeID)
+        public void ClearRobotsCache(int currentContentTypeID)
         {
-            if(newContentTypeID == _contentTypeRepository.Load(typeof(RobotsSettingsPage).Name).ID)
+            if(currentContentTypeID == _contentTypeRepository.Load(typeof(RobotsSettingsPage).Name).ID)
             {
                 CacheManager.Remove(RobotsSettingsPageCacheKey);
             }
         }
 
-        public IHasRobots GetRobots()
+        public IHasRobots GetRobots(bool ignoreCache)
         {
-            if (!(CacheManager.Get(RobotsSettingsPageCacheKey) is IHasRobots robotsPage))
+            if (ignoreCache || !(CacheManager.Get(RobotsSettingsPageCacheKey) is IHasRobots robotsPage))
             {
                 robotsPage = null;
 
