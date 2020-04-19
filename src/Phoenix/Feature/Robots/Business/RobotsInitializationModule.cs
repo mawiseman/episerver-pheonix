@@ -44,6 +44,9 @@ namespace Feature.Robots.Business
 
         private void CreatingContent(object sender, EPiServer.ContentEventArgs e)
         {
+            if (e.Content == null)
+                return;
+
             bool shouldCancel = _robotsService.ShouldCancelRobotsSettingsPageCreation(e.Content.ContentTypeID);
 
             if(shouldCancel)

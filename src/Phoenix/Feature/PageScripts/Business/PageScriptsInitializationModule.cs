@@ -33,6 +33,9 @@ namespace Feature.PageScripts.Business
 
         private void CreatingContent(object sender, EPiServer.ContentEventArgs e)
         {
+            if (e.Content == null)
+                return;
+
             bool shouldCancel = _pageScriptService.ShouldCancelGlobalPageScriptPageCreation(e.Content.ContentTypeID);
 
             if(shouldCancel)
