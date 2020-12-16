@@ -8,3 +8,4 @@ src/pheonix.ui/bin
 *\obj
 *.log
 *.log
+.vs
